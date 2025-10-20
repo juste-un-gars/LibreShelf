@@ -129,6 +129,7 @@ class ReaderViewModel @Inject constructor(
     override fun onCleared() {
         super.onCleared()
         // Clean up readers
+        epubReader.closeBook()
         pdfReader.closeDocument()
         comicReader.closeComic()
     }

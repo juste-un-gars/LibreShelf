@@ -53,6 +53,11 @@ android {
     packaging {
         resources {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
+            excludes += "/META-INF/DEPENDENCIES"
+            excludes += "/META-INF/LICENSE"
+            excludes += "/META-INF/LICENSE.txt"
+            excludes += "/META-INF/NOTICE"
+            excludes += "/META-INF/NOTICE.txt"
         }
     }
 }
@@ -99,11 +104,8 @@ dependencies {
     // PDF Reader
     implementation("com.tom-roush:pdfbox-android:2.0.27.0")
 
-    // EPUB Reader
-    implementation("nl.siegmann.epublib:epublib-core:3.1") {
-        exclude(group = "org.slf4j")
-        exclude(group = "xmlpull")
-    }
+    // EPUB Reader - Using built-in XML parsing (EPUB is ZIP + XML/HTML)
+    // No external library needed, we'll use Java's ZipFile and XML parsers
 
     // Image loading with Coil
     implementation("io.coil-kt.coil3:coil-compose:3.0.4")
