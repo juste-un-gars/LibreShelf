@@ -114,7 +114,7 @@ dependencies {
     // Network libraries for SMB/FTP/WebDAV
     implementation("com.squareup.okhttp3:okhttp:4.12.0")
     implementation("com.hierynomus:smbj:0.13.0")
-    implementation("com.github.thegrizzlylabs:sardine-android:0.8")
+    // WebDAV - Using OkHttp directly (no external library needed)
     implementation("commons-net:commons-net:3.11.1")
 
     // JSON parsing
